@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+ <typeAliases>
+      <package name="com.company"/> <!-- 패키지 걸어주면 알아서 다 알리어스 걸어줌 앞의 글자만 소문자인 규칙 -->
+   </typeAliases>
+ </configuration>

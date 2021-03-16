@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.bank.service.impl.EmpMapper">
+     <select id="getEmpList" resultType="map">
+     select first_name "firstName",
+            last_name  "lastName",
+            salary     "salary",
+            email      "email"
+     from employees
+     </select>
+     <!-- 일별합계 -->                        <!-- resultType="map" resultType="SaleVO" 차이 구분하기 -->
+     <select id="sumSale" resultType="map"> <!-- vo일땐 String으로 들어가서 parseInt가 필요하지만 map일땐 자기 타입 그대로 들어가서 parseInt가 필요 없다. -->
+     select to_char(sale_date, 'YYYY-MM-dd') as sale_date, 
+     sum(sale_price) as sum 
+     from sale_tbl_10 
+     group by to_char(sale_date, 'YYYY-MM-dd') 
+     </select>
+</mapper>
